@@ -1,0 +1,40 @@
+﻿@model UserEditVM
+@{
+    Layout = "_Layout";
+}
+
+<form asp-action="UserEdit" method="post" class="p-4 w-75 mx-auto shadow">
+    <div class="mb-3">
+        <label>Username:</label>
+        <span class="text-danger" asp-validation-for="UserName"></span>
+        <input asp-for="UserName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Email:</label>
+        <span class="text-danger" asp-validation-for="Email"></span>
+        <input type="email" asp-for="Email" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Gender:</label>
+        <span class="text-danger" asp-validation-for="Gender"></span>
+        <input asp-for="Gender" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Roles:</label>
+        <input type="text" asp-for="SelectedRoles" class="form-control" />
+        
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-dark">Update User</button>
+        <a class="btn btn-dark" asp-action="Index">Cancel</a>
+    </div>
+
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+</form>
+
+
+
